@@ -19,7 +19,6 @@ export function getGreatestDiscoveryYear(data) {
 }
 
 
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"
 // If the test has all tests passed, switch to the next exercise file

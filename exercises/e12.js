@@ -6,10 +6,10 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   const planets = data.planets;
-  const moonArray = planets
-    .filter((planet) => planet.moons)
-    .map((planets) => planets.moons);
-  return moonArray.flat().length;
+  return  planets
+  .filter((planets) => planets.moons)
+  .map((planet) => planet.moonsCount)
+  .reduce((acc, val) => acc + val, 0)
 }
 
 
