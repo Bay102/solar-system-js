@@ -6,9 +6,9 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   const planets = data.planets;
-  const planetsWithMoons = planets.filter((planet) => planet.moonsCount); 
-  const withMoons = planetsWithMoons.filter((planet) => planet.moons.includes(moonName));
-  return withMoons[0].name  
+   const withMoons = planets.filter((planet) => planet.moonsCount)
+   .filter((planet) => planet.moons.includes(moonName))
+   return withMoons[0].name  
 }
 
 
