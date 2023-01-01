@@ -4,10 +4,11 @@ import { data } from "../data/data";
 // Return an array of Planets' names without moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-export function getPlanetsWithNoMoons(data) {
-  const planets = data.planets;
-  return planets.filter((planet) => ! planet.moonsCount)
-  .map((planet) => planet.name)
+export function getPlanetsWithNoMoons(data) {   
+  return data.planets.reduce((acc, planet) => { 
+    !planet.moonsCount ? acc.push(planet.name) : acc 
+    return acc
+   }, [])
 }
 
 
