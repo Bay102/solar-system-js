@@ -6,9 +6,8 @@ import { data } from "../data/data";
 
 export function getPlanetNames(data) {
   return data.planets.reduce((acc, planet) => {
-    acc.push(planet.name)  
-    return acc 
-}, [])
+    return [...acc, planet.name];
+  }, []);
 }
 
 

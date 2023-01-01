@@ -5,11 +5,10 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  return data.planets.filter(planet => 
-    planet.moons.includes(moonName))[0].name
+  return data.planets.filter((planet) =>
+       planet.hasOwnProperty('moons') &&
+       planet.moons.includes(moonName))[0].name
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"

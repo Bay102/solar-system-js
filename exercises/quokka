@@ -345,16 +345,15 @@ export const data = {
   ],
 };
 
-// // E1
+// E1
 // function getPlanetNames(data) {
 //   return data.planets.reduce((acc, planet) => {
-//       acc.push(planet.name)
-//       return acc
-//   }, [])
+//     return [...acc, planet.name];
+//   }, []);
 // }
 // console.log(getPlanetNames(data));
 
-// // E8
+// E8
 // function findPlanetNameByMoon(data, moonName) {
 //    return data.planets.filter((planet) =>
 //      planet.hasOwnProperty('moons') &&
@@ -362,7 +361,7 @@ export const data = {
 //  }
 //  console.log(findPlanetNameByMoon(data, "La Lune"));
 
-//  // E12
+// E12
 //  function allPlanetsMoonsCount(data) {
 //    return data.planets.reduce((acc, planet) => {
 //      const allMoonsCount = planet.moonsCount ?? 0;  allMoonsCount
@@ -371,19 +370,26 @@ export const data = {
 //  }
 //  console.log(allPlanetsMoonsCount(data))
 
-// E14
-function getOrbitalPeriodsSum({ asteroids }) {
-  return asteroids.reduce((acc, asteriod) => {    
-  return (acc + asteriod.orbitalPeriod)  
-  }, 0);
-}
-console.log(getOrbitalPeriodsSum(data));
+// E13
+// function getAveragePlanetsTemperature({ planets }) {
+//  return planets.reduce((acc, planet) => {
+//   return acc + planet.avgTemp / planets.length
+//  }, 0)
+// }
+// console.log(getAveragePlanetsTemperature(data));
 
-//  // E15
-//  function getPlanetsWithNoMoons(data) {
+// E14
+// function getOrbitalPeriodsSum({ asteroids }) {
+//   return asteroids.reduce((acc, asteriod) => {
+//     return acc + asteriod.orbitalPeriod;
+//   }, 0);
+// }
+// console.log(getOrbitalPeriodsSum(data));
+
+// E15
+// function getPlanetsWithNoMoons(data) {
 //   return data.planets.reduce((acc, planet) => {
-//    !planet.moonsCount ? acc.push(planet.name) : acc
-//    return acc
-//   }, [])
-//  }
-//  console.log(getPlanetsWithNoMoons(data));
+//     return !planet.moonsCount ? [...acc, planet.name] : acc;
+//   }, []);
+// }
+// console.log(getPlanetsWithNoMoons(data));
