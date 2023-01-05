@@ -361,6 +361,14 @@ export const data = {
 //  }
 //  console.log(findPlanetNameByMoon(data, "La Lune"));
 
+// E11
+function lowMoonsPlanets({planets}) { 
+   return planets.reduce((acc, planet) => { 
+    return planet.moonsCount < 10 ? [...acc,planet.name] : acc 
+   }, [])
+}
+console.log(lowMoonsPlanets(data));
+
 // E12
 //  function allPlanetsMoonsCount(data) {
 //    return data.planets.reduce((acc, planet) => {
@@ -393,3 +401,33 @@ export const data = {
 //   }, []);
 // }
 // console.log(getPlanetsWithNoMoons(data));
+
+
+
+// E16
+// function find(array, callback) {
+//   for (let element of array) {
+//     if (callback(element)) {
+//       return element;
+//     }
+//   }
+// }
+
+// console.log(find(data, callback));
+
+
+// E18
+// function getGreatestDiscoveryYear({asteroids}) {
+//   const allDiscoveryYears = asteroids.map((asteroid) => asteroid.discoveryYear);
+//   const mostFrequent = (arr) => { 
+//     const counts = arr.reduce((acc, curr) => {
+//       acc[curr] = (acc[curr] || 0) + 1;
+//       return acc;
+//     }, {});
+//     const maxCount = Math.max(...Object.values(counts)); maxCount
+//     return Number(Object.keys(counts).find((key) => counts[key] === maxCount));
+//   }
+//   return mostFrequent(allDiscoveryYears);
+// }
+
+// console.log(getGreatestDiscoveryYear(data));
