@@ -4,10 +4,11 @@ import { data } from "../data/data";
 // Return a Planet name by a given moon name
 // Return example: 'Planet Name'
 
-export function findPlanetNameByMoon(data, moonName) {
-  return data.planets.filter((planet) =>
-       planet.hasOwnProperty('moons') &&
-       planet.moons.includes(moonName))[0].name
+export function findPlanetNameByMoon({planets}, moonName) {
+  return planets
+  .filter(
+    (planet) => planet.moons && planet.moons.includes(moonName)
+    )[0].name;
 }
 
 // === TEST YOURSELF ===

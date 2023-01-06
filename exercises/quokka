@@ -346,7 +346,10 @@ export const data = {
 };
 
 // E1
-// function getPlanetNames(data) {
+// function getPlanetNames({planets}) {
+// //   return planets.map((planet) => planet.name)
+// // }
+
 //   return data.planets.reduce((acc, planet) => {
 //     return [...acc, planet.name];
 //   }, []);
@@ -354,20 +357,24 @@ export const data = {
 // console.log(getPlanetNames(data));
 
 // E8
-// function findPlanetNameByMoon(data, moonName) {
-//    return data.planets.filter((planet) =>
-//      planet.hasOwnProperty('moons') &&
-//      planet.moons.includes(moonName))[0].name
-//  }
-//  console.log(findPlanetNameByMoon(data, "La Lune"));
+// function findPlanetNameByMoon({ planets }, moonName) {
+//   return planets.filter(
+//     (planet) => planet.moons && planet.moons.includes(moonName)
+//   )[0].name;
+
+//   //  return data.planets.filter((planet) =>
+//   //    planet.hasOwnProperty('moons') &&
+//   //    planet.moons.includes(moonName))[0].name
+// }
+// console.log(findPlanetNameByMoon(data, "Triton"));
 
 // E11
-function lowMoonsPlanets({planets}) { 
-   return planets.reduce((acc, planet) => { 
-    return planet.moonsCount < 10 ? [...acc,planet.name] : acc 
-   }, [])
-}
-console.log(lowMoonsPlanets(data));
+// function lowMoonsPlanets({planets}) {
+//    return planets.reduce((acc, planet) => {
+//     return planet.moonsCount < 10 ? [...acc,planet.name] : acc
+//    }, [])
+// }
+// console.log(lowMoonsPlanets(data));
 
 // E12
 //  function allPlanetsMoonsCount(data) {
@@ -402,24 +409,10 @@ console.log(lowMoonsPlanets(data));
 // }
 // console.log(getPlanetsWithNoMoons(data));
 
-
-
 // E16
-// function find(array, callback) {
-//   for (let element of array) {
-//     if (callback(element)) {
-//       return element;
-//     }
-//   }
-// }
-
-// console.log(find(data, callback));
-
-
-// E18
 // function getGreatestDiscoveryYear({asteroids}) {
 //   const allDiscoveryYears = asteroids.map((asteroid) => asteroid.discoveryYear);
-//   const mostFrequent = (arr) => { 
+//   const mostFrequent = (arr) => {
 //     const counts = arr.reduce((acc, curr) => {
 //       acc[curr] = (acc[curr] || 0) + 1;
 //       return acc;

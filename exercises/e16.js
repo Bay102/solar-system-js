@@ -1,13 +1,12 @@
 // see e16.md
 
 export function find(array, callback) {
-   for (let element of array) {
-     if (callback(element)) {
-       return element;
-     }
-   }
- }
-
+  for (let element of array) {
+    if (callback(element)) {
+      return element;
+    }
+  }
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"
